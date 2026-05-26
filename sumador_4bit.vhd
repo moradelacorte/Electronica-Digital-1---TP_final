@@ -1,13 +1,11 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 entity sumador_4bit is
     Port ( 
-        A    : in  STD_LOGIC_VECTOR (3 downto 0);
-        B    : in  STD_LOGIC_VECTOR (3 downto 0);
-        Cin  : in  STD_LOGIC;
-        S    : out STD_LOGIC_VECTOR (3 downto 0);
-        Cout : out STD_LOGIC
+        A    : in  bit_vector (3 downto 0);
+        B    : in  bit_vector (3 downto 0);
+        Cin  : in  bit;
+        S    : out bit_vector (3 downto 0);
+        Cout : out bit
     );
 end sumador_4bit;
 
@@ -16,16 +14,16 @@ architecture Estructural of sumador_4bit is
     -- Declaración del componente 
     component sumador_1bit is
         Port ( 
-            A    : in  STD_LOGIC;
-            B    : in  STD_LOGIC;
-            Cin  : in  STD_LOGIC;
-            S    : out STD_LOGIC;
-            Cout : out STD_LOGIC
+        A    : in  bit;
+        B    : in  bit;
+        Cin  : in  bit;
+        S    : out bit;
+        Cout : out bit
         );
     end component;
 
     -- Cables internos para conectar el Cout de un sumador al Cin del siguiente
-    signal c1, c2, c3 : STD_LOGIC;
+    signal c1, c2, c3 : bit;
 
 begin
 

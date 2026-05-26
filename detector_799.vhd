@@ -1,10 +1,8 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 entity detector_799 is
     Port ( 
-        count_in : in  STD_LOGIC_VECTOR (9 downto 0);
-        equals   : out STD_LOGIC
+        count_in : in  bit_vector (9 downto 0);
+        equals   : out bit
     );
 end detector_799;
 

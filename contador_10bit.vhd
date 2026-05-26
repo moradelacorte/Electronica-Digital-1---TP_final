@@ -1,11 +1,9 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 entity contador_10bit is
     Port ( 
-        clk   : in  STD_LOGIC;
-        clr   : in  STD_LOGIC;
-        count : out STD_LOGIC_VECTOR (9 downto 0)
+        clk   : in  bit;
+        clr   : in  bit;
+        count : out bit_vector(9 downto 0)
     );
 end contador_10bit;
 
@@ -13,30 +11,30 @@ architecture Estructural of contador_10bit is
 
     component sumador_10bit is
         Port ( 
-            A    : in  STD_LOGIC_VECTOR (9 downto 0);
-            B    : in  STD_LOGIC_VECTOR (9 downto 0);
-            Cin  : in  STD_LOGIC;
-            S    : out STD_LOGIC_VECTOR (9 downto 0);
-            Cout : out STD_LOGIC
+            A    : in  bit_vector (9 downto 0);
+            B    : in  bit_vector (9 downto 0);
+            Cin  : in  bit;
+            S    : out bit_vector (9 downto 0);
+            Cout : out bit
         );
     end component;
 
     component registro_10bit is
         Port ( 
-            clk : in  STD_LOGIC;
-            clr : in  STD_LOGIC;
-            D   : in  STD_LOGIC_VECTOR (9 downto 0);
-            Q   : out STD_LOGIC_VECTOR (9 downto 0)
+            clk : in  bit;
+            clr : in  bit;
+            D   : in  bit_vector (9 downto 0);
+            Q   : out bit_vector (9 downto 0)
         );
     end component;
 
     -- Cables lógicos internos para entrelazar el sumador y el registro
-    signal valor_actual    : STD_LOGIC_VECTOR(9 downto 0);
-    signal valor_siguiente : STD_LOGIC_VECTOR(9 downto 0);
+    signal valor_actual    : bit_vector (9 downto 0);
+    signal valor_siguiente : bit_vector (9 downto 0);
     
     -- El valor constante '1' en formato binario de 10 bits
-    signal uno_constante   : STD_LOGIC_VECTOR(9 downto 0) := "0000000001";
-    signal cout_no_usado   : STD_LOGIC;
+    signal uno_constante   : bit_vector (9 downto 0) := "0000000001";
+    signal cout_no_usado   : bit;
 
 begin
 

@@ -1,12 +1,10 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 entity registro_10bit is
     Port ( 
-        clk : in  STD_LOGIC;
-        clr : in  STD_LOGIC;
-        D   : in  STD_LOGIC_VECTOR (9 downto 0);
-        Q   : out STD_LOGIC_VECTOR (9 downto 0)
+        clk : in  bit;
+        clr : in  bit;
+        D   : in  bit_vector (9 downto 0);
+        Q   : out bit_vector (9 downto 0)
     );
 end registro_10bit;
 

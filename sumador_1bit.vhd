@@ -1,13 +1,11 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 entity sumador_1bit is
     Port ( 
-        A    : in  STD_LOGIC;
-        B    : in  STD_LOGIC;
-        Cin  : in  STD_LOGIC;
-        S    : out STD_LOGIC;
-        Cout : out STD_LOGIC
+        A    : in  bit;
+        B    : in  bit;
+        Cin  : in  bit;
+        S    : out bit;
+        Cout : out bit
     );
 end sumador_1bit;
 

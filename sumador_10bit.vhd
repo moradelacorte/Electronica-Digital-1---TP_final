@@ -1,13 +1,11 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 entity sumador_10bit is
     Port ( 
-        A    : in  STD_LOGIC_VECTOR (9 downto 0);
-        B    : in  STD_LOGIC_VECTOR (9 downto 0);
-        Cin  : in  STD_LOGIC;
-        S    : out STD_LOGIC_VECTOR (9 downto 0);
-        Cout : out STD_LOGIC
+        A    : in  bit_vector (9 downto 0);
+        B    : in  bit_vector (9 downto 0);
+        Cin  : in  bit;
+        S    : out bit_vector (9 downto 0);
+        Cout : out bit
     );
 end sumador_10bit;
 
@@ -15,16 +13,16 @@ architecture Estructural of sumador_10bit is
 
     component sumador_1bit is
         Port ( 
-            A    : in  STD_LOGIC;
-            B    : in  STD_LOGIC;
-            Cin  : in  STD_LOGIC;
-            S    : out STD_LOGIC;
-            Cout : out STD_LOGIC
+        A    : in  bit;
+        B    : in  bit;
+        Cin  : in  bit;
+        S    : out bit;
+        Cout : out bit
         );
     end component;
 
     -- Cables de acarreo internos (necesitamos 9 acarreos intermedios)
-    signal c : STD_LOGIC_VECTOR(8 downto 0);
+    signal c : bit_vector (8 downto 0);
 
 begin
 
